@@ -44,7 +44,7 @@ export const createCar = async (car: CarFormValues): Promise<Car> => {
   try {
     const response = await ApiService.postRequest(apiEndPoint, car);
 
-    if (response?.data && response?.status === 200) {
+    if (response?.data) {
       // Returning success response data
       return response.data;
     }
