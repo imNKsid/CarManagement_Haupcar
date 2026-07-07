@@ -1,5 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
+import { Prisma, PrismaClient } from "@prisma/client";
 import { NextFunction, Request, Response } from "express";
 import { ApiError } from "../middleware/errorHandler";
 
@@ -110,7 +109,10 @@ export async function createCar(
 
     res.status(201).json(car);
   } catch (err) {
-    if (err instanceof PrismaClientKnownRequestError && err.code === "P2002") {
+    if (
+      err instanceof Prisma.PrismaClientKnownRequestError &&
+      err.code === "P2002"
+    ) {
       return next(
         new ApiError(400, "A car with this registration number already exists"),
       );
@@ -149,7 +151,10 @@ export async function updateCar(
 
     res.status(200).json(car);
   } catch (err) {
-    if (err instanceof PrismaClientKnownRequestError && err.code === "P2002") {
+    if (
+      err instanceof Prisma.PrismaClientKnownRequestError &&
+      err.code === "P2002"
+    ) {
       return next(
         new ApiError(400, "A car with this registration number already exists"),
       );
