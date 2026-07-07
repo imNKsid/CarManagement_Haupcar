@@ -51,6 +51,8 @@ DATABASE_URL="file:./dev.db"
 PORT=4000
 ```
 
+Now do these -
+
 ```bash
 cd backend
 yarn
@@ -84,6 +86,8 @@ Create a .env file, and add this line -
 ```
 VITE_API_BASE_URL=http://localhost:4000/api
 ```
+
+Now do these -
 
 ```bash
 cd frontend
@@ -126,13 +130,13 @@ yarn preview     # preview the production build locally
 
 Base URL: `http://localhost:4000/api`
 
-| Method | Endpoint         | Description         | Success | Errors            |
-|--------|------------------|----------------------|---------|--------------------|
-| GET    | `/cars`          | Returns all cars     | 200     | 500                |
-| GET    | `/cars/:id`      | Returns one car      | 200     | 400, 404, 500      |
-| POST   | `/cars`          | Creates a car        | 201     | 400, 500           |
-| PUT    | `/cars/:id`      | Updates a car        | 200     | 400, 404, 500      |
-| DELETE | `/cars/:id`      | Deletes a car        | 200     | 400, 404, 500      |
+| Method | Endpoint    | Description      | Success | Errors        |
+| ------ | ----------- | ---------------- | ------- | ------------- |
+| GET    | `/cars`     | Returns all cars | 200     | 500           |
+| GET    | `/cars/:id` | Returns one car  | 200     | 400, 404, 500 |
+| POST   | `/cars`     | Creates a car    | 201     | 400, 500      |
+| PUT    | `/cars/:id` | Updates a car    | 200     | 400, 404, 500 |
+| DELETE | `/cars/:id` | Deletes a car    | 200     | 400, 404, 500 |
 
 ### Car object
 
