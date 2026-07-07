@@ -44,6 +44,13 @@ frontend/
 
 ## Backend Setup
 
+Create a .env file, and add these lines -
+
+```
+DATABASE_URL="file:./dev.db"
+PORT=4000
+```
+
 ```bash
 cd backend
 yarn
@@ -71,6 +78,12 @@ yarn prisma:studio     # open Prisma Studio to inspect the database
 ```
 
 ## Frontend Setup
+
+Create a .env file, and add this line -
+
+```
+VITE_API_BASE_URL=http://localhost:4000/api
+```
 
 ```bash
 cd frontend
